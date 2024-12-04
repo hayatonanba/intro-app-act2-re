@@ -8,7 +8,7 @@ export default function CreateBlogPage() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        await fetch("api/post", {
+        await fetch("http://localhost:3003/api/post", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -29,6 +29,7 @@ export default function CreateBlogPage() {
             Content:
             <input value={content} onChange={(e) => setContent(e.target.value)} />
         </label>
+        <button type="submit">post</button>
     </form>
   )
 }
